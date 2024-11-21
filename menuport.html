@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spice Paradise - Indian Restaurant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="menuport.css">
+    
+</head>
+<body>
+    <div class="header">
+        <h1 class="restaurant-name">Cilantro's Modern Indian Cuisine</h1>
+        <p>Authentic Indian Cuisine</p>
+    </div>
+
+    <nav class="nav-categories">
+        <ul class="category-list">
+            <li class="nav-item active" data-filter="all">All</li>
+            <li class="nav-item" data-filter="starters">Starters</li>
+            <li class="nav-item" data-filter="main-course">Main Course</li>
+            <li class="nav-item" data-filter="breads">Breads</li>
+            <li class="nav-item" data-filter="rice-biryani">Rice & Biryani</li>
+            <li class="nav-item" data-filter="desserts">Desserts</li>
+            <li class="nav-item" data-filter="beverages">Beverages</li>
+            <li class="nav-item veg-filter" data-filter="veg">
+                <span class="veg-icon"></span>Veg
+            </li>
+            <li class="nav-item non-veg-filter" data-filter="non-veg">
+                <span class="non-veg-icon"></span>Non-Veg
+            </li>
+        </ul>
+    </nav>
+    
+
+    <div class="menu-container">
+        <section class="menu-section">
+            <h2 class="section-title">Starters</h2>
+            <div class="menu-grid">
+                <!-- Menu Item -->
+<div class="menu-item" data-category="main-course" data-diet-type="veg">
+    <div class="item-name">
+      Paneer Tikka
+      <span class="item-price">[₹250]</span>
+    </div>
+    <div class="item-description">
+      Marinated cottage cheese cubes grilled to perfection with bell peppers and onions.
+    </div>
+    <div class="item-controls">
+      <div class="quantity-control">
+        <button class="quantity-btn minus">-</button>
+        <input type="number" class="quantity-input" value="1" min="1" max="10" />
+        <button class="quantity-btn plus">+</button>
+      </div>
+      <div class="spice-control">
+        <label for="spice-level">Spice Level:</label>
+        <select class="spice-level" id="spice-level">
+          <option value="mild">Mild</option>
+          <option value="medium">Medium</option>
+          <option value="spicy">Spicy</option>
+        </select>
+      </div>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+            </div>
+        </section>
+
+        <section class="menu-section">
+            <h2 class="section-title">Main Course</h2>
+            <div class="menu-grid">
+                
+
+                
+            </div>
+        </section>
+
+        <!-- Add more sections similarly -->
+    </div>
+
+    <!-- Order Page -->
+    <div class="checkout-container">
+        <h2>Checkout</h2>
+        <div class="cart-summary">
+          <!-- Cart items will be dynamically generated here -->
+        </div>
+        <div class="order-summary">
+          <div class="total-price">Total Price: $<span class="total-amount">0</span></div>
+          <div class="taxes-and-fees">
+            Taxes and Fees: $<span class="taxes-amount">0</span>
+          </div>
+          <div class="final-amount">
+            Final Amount: $<span class="final-amount">0</span>
+          </div>
+          <button class="place-order-btn">Place Order</button>
+        </div>
+      </div>
+  
+  <!-- Checkout Page -->
+  <div class="payment-container">
+    <h2>Complete Your Order</h2>
+    <form class="payment-form">
+      <label for="name">Name on Card:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="card-number">Card Number:</label>
+      <input type="text" id="card-number" name="card-number" required>
+      <label for="expiration">Expiration Date:</label>
+      <input type="text" id="expiration" name="expiration" required>
+      <label for="cvv">CVV:</label>
+      <input type="text" id="cvv" name="cvv" required>
+      <button type="submit" class="submit-btn">Place Order</button>
+    </form>
+  </div>
+  
+  <!-- Receipt Page -->
+  <div class="receipt-container">
+    <h2>Thank you for your order!</h2>
+    <div class="receipt-details">
+      <!-- Order details will be dynamically generated here -->
+    </div>
+  </div>
+
+    <script src="menuport.js"></script> 
+</body>
+</html>

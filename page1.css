@@ -1,0 +1,364 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 251, 235);
+    font-family: 'Arial', sans-serif;
+}
+
+.book {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    min-height: 600px;
+    margin: 20px;
+    display: flex;
+    background: white;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.page {
+    width: 50%;
+    padding: 32px;
+    min-height: 600px;
+    box-sizing: border-box;
+}
+
+.page-left {
+    border-right: 1px solid #e5e5e5;
+    background-image: linear-gradient(to right, #f8f8f8 0%, white 8%);
+    box-shadow: inset -7px 0 30px -7px rgba(0,0,0,0.1);
+}
+
+.page-right {
+    background-image: linear-gradient(to left, #f8f8f8 0%, white 8%);
+    box-shadow: inset 7px 0 30px -7px rgba(0,0,0,0.1);
+}
+
+.cover-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+}
+
+.cover-image {
+    width: 80%;
+    height: 300px;
+    margin-bottom: 2rem;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.restaurant-name {
+    font-family: 'Georgia', serif;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #1f2937;
+}
+
+h2 {
+    font-family: 'Georgia', serif;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.menu-item {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.menu-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+}
+
+.menu-item-name {
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.menu-item-price {
+    font-size: 1.125rem;
+    color: #4b5563;
+}
+
+.menu-item-description {
+    color: #6b7280;
+    line-height: 1.5;
+}
+
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgb(254, 243, 199);
+    border: none;
+    color: #1f2937;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.nav-button:hover {
+    background-color: rgb(253, 230, 138);
+}
+
+.nav-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.nav-button-prev {
+    left: 0;
+    transform: translateX(-48px);
+    border-radius: 4px 0 0 4px;
+}
+
+.nav-button-next {
+    right: 0;
+    transform: translateX(48px);
+    border-radius: 0 4px 4px 0;
+}
+
+.page-numbers {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #6b7280;
+}
+
+.continued-text {
+    font-style: italic;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.favorite-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #fbbf24;
+    margin-left: 8px;
+}
+
+/* Media Queries for Responsive Design */
+
+@media screen and (max-width: 1100px) {
+    .nav-button {
+        transform: none;
+        position: fixed;
+        bottom: 20px;
+        top: auto;
+        z-index: 1000;
+    }
+
+    .nav-button-prev {
+        left: 20px;
+    }
+
+    .nav-button-next {
+        right: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .book {
+        margin: 10px;
+        min-height: auto;
+    }
+
+    .page {
+        width: 100%; /* Full width on mobile */
+        min-height: auto;
+        padding: 20px;
+    }
+
+    .cover-image {
+        width: 90%;
+        height: 200px;
+    }
+
+    .restaurant-name {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    .menu-item-name {
+        font-size: 1.1rem;
+    }
+
+    .menu-item-price {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .book {
+        margin: 5px;
+        box-shadow: 0 15px 30px -8px rgba(0, 0, 0, 0.25);
+    }
+
+    .page {
+        padding: 15px;
+    }
+
+    .cover-image {
+        height: 150px;
+    }
+
+    .restaurant-name {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .menu-item {
+        margin-bottom: 1rem;
+    }
+
+    .menu-item-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu-item-price {
+        margin-top: 0.25rem;
+    }
+
+    .nav-button {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Add smooth transitions for better user experience */
+@media screen and (prefers-reduced-motion: no-preference) {
+    .book,
+    .page,
+    .nav-button {
+        transition: all 0.3s ease-in-out;
+    }
+}
+
+/* Print Media Query */
+@media print {
+    .book {
+        box-shadow: none;
+        margin: 0;
+    }
+
+    .nav-button {
+        display: none;
+    }
+}
+
+/* Corner image container styles */
+.corner-image {
+    position: absolute;
+    width: 60px;  /* adjust size as needed */
+    height: 60px;
+    z-index: 10;
+}
+
+/* Position classes for corners */
+.top-left {
+    top: 10px;
+    left: 10px;
+}
+
+.top-right {
+    top: 10px;
+    right: 10px;
+}
+
+.bottom-left {
+    bottom: 10px;
+    left: 10px;
+}
+
+.bottom-right {
+    bottom: 10px;
+    right: 10px;
+}
+
+.corner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .corner-image {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Add this to your existing CSS */
+/* Replace the existing page turning CSS with this: */
+
+.book {
+    perspective: 1500px;
+    position: relative;
+}
+
+.page {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background-color: white;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+    backface-visibility: hidden;
+    z-index: 1;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.page-right {
+    right: 0;
+    transform-origin: 0% 50%; /* Changed from 100% to 0% */
+    left: 50%;
+}
+
+.page-left {
+    left: 0;
+    transform-origin: 100% 50%; /* Changed from 0% to 100% */
+}
+
+/* For left arrow click (turning from left to right) */
+.page-left.turning {
+    transform: rotateY(180deg); /* Changed from -180deg to 180deg */
+    z-index: 2;
+}
+
+/* For right arrow click (turning from right to left) */
+.page-right.turning {
+    transform: rotateY(-180deg); /* Changed from 180deg to -180deg */
+    z-index: 2;
+}

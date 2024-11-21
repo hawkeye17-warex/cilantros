@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cilantro's Indian Restaurant</title>
+    <link rel="stylesheet" href="home.css">
+	<!-- Google Fonts for updated design -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Allura&family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+</head>
+<body>
+<!-- Preloader -->
+<div id="preloader">
+    <div class="loader">
+        <div class="chakra">
+            <div class="spoke"></div>
+            <div class="spoke"></div>
+            <div class="spoke"></div>
+            <div class="spoke"></div>
+            <div class="spoke"></div>
+            <div class="spoke"></div>
+            <div class="spoke"></div>
+            <div class="spoke"></div>
+        </div>
+    </div>
+</div>
+<div id="main-content" class="main-content" style="display: none;">
+    <!-- Navbar -->
+    <!-- Navbar with Hamburger Menu for Mobile -->
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="Cilantro's Restaurant Logo">
+        </div>
+        <!-- Hamburger Icon -->
+        <div class="hamburger">
+            <i class="fas fa-bars"></i> <!-- Font Awesome icon for the menu -->
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about-us">About Us</a></li>
+            <li><a href="menu.html">Order Here</a></li>
+            <li><a href="#team">Our Team</a></li>
+            <li><a href="#review">Review Us</a></li>
+            <li><a href="#location">Contact Us</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+
+    <!-- Image Slider with Text -->
+    <div class="slider-container">
+        <div class="slide active">
+            <div class="slide-content">
+                <div class="image-container">
+                    <img src="gateway.jpg" alt="Signature Dish" class="slide-image">
+                </div>
+                <div class="overlay"></div>
+                <div class="text-content">
+                    <h2 class="slide-title">Culinary Symphony</h2>
+                    <p class="slide-description">Experience our chef's masterpiece, where tradition meets innovation</p>
+                </div>
+                <div class="dish-details">
+                    <h3>Chef's Special</h3>
+                    <p>Seasonal ingredients • Local produce</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide inactive" style="transform: translateX(100%)">
+            <div class="slide-content">
+                <div class="image-container">
+                    <img src="inside.jpg" alt="Ambiance" class="slide-image">
+                </div>
+                <div class="overlay"></div>
+                <div class="text-content">
+                    <h2 class="slide-title">Elegant Ambiance</h2>
+                    <p class="slide-description">Immerse yourself in an atmosphere of refined luxury</p>
+                </div>
+                <div class="dish-details">
+                    <h3>Private Dining</h3>
+                    <p>Intimate setting • Personalized service</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide inactive" style="transform: translateX(100%)">
+            <div class="slide-content">
+                <div class="image-container">
+                    <img src="entry.jpg" alt="Ambiance" class="slide-image">
+                </div>
+                <div class="overlay"></div>
+                <div class="text-content">
+                    <h2 class="slide-title">Elegant Ambiance</h2>
+                    <p class="slide-description">Immerse yourself in an atmosphere of refined luxury</p>
+                </div>
+                <div class="dish-details">
+                    <h3>Private Dining</h3>
+                    <p>Intimate setting • Personalized service</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="circular-progress">
+            <div class="loading-circle"></div>
+        </div>
+
+        <div class="navigation">
+            <button class="nav-btn" onclick="prevSlide()">←</button>
+            <button class="nav-btn" onclick="nextSlide()">→</button>
+        </div>
+    </div>
+	
+	 <!-- <div class="animation-divider"></div> -->
+
+
+	
+     <section class="about-section-new" id="about-us">
+        <!-- Decorative Elements -->
+        <div class="mandala-overlay"></div>
+        
+        <!-- Main Content -->
+        
+            
+    
+            <!-- Right Side -->
+            <div class="about-right">
+                <div class="section-title">
+                    <h2>Our Story</h2>
+                    <div class="title-decoration"></div>
+                </div>
+                <div class="content-scroll">
+                    <p class="highlight-text">Welcome to Taste of India</p>
+                    <p class="main-text">Welcome to <span class="highlight">Cilantro's</span>, Restaurant, nestled in the vibrant heart of Winnipeg, Manitoba, where authentic Indian cuisine meets 
+                        a cozy, welcoming atmosphere. Our goal is simple: to provide a warm space where you can enjoy a delectable Indian meal while engaging in meaningful 
+                        conversation. We take pride in offering a carefully crafted menu, featuring freshly prepared dishes tailored to your preferences, alongside a variety of hot 
+                        and cold beverages.<br>
+                        <br>
+                        What you see today is the result of passion, dedication, and countless hours of refining our offerings. From breakfast to dinner, our menu blends the 
+                        rich tradition of Indian flavors with a touch of modern innovation, ensuring every meal is an experience worth savoring. Our friendly and attentive team, 
+                        including both staff and owners, work tirelessly to provide an inviting environment for all our guests.<br>
+                        <br>
+                        At <span class = "highlight">Cilantro’s</span>, we understand the importance of catering to diverse dietary needs. Our menu includes vegan-friendly and 
+                        gluten-free options, ensuring that everyone can indulge in our freshly prepared meals, regardless of dietary restrictions. We proudly serve the local 
+                        community and businesses, delivering exceptional quality and a memorable dining experience every time.<br>
+                        <br>
+                        Our mission is to deliver fresh, flavorful, and remarkable dishes that uphold the highest standards of quality, freshness, and seasonality. With a 
+                        perfect blend of traditional Indian cooking and creative modern twists, we aim to exceed your expectations and keep you coming back for more.<br>
+                        <br>
+                        We are committed to providing exceptional service that combines warmth, professionalism, and efficiency. Our goal is for every guest who walks through 
+                        our doors to leave with a smile and the desire to return.<br>
+                        <br>
+                        At <span class="highlight">Cilantro's</span>, we don't just run a restaurant—we create an experience, paying meticulous attention to every detail and fostering an environment where 
+                        both our guests and staff thrive. We are proud to be part of the Winnipeg community and thank you for making us your dining destination.<br>
+                        <br>
+                        From the <span class="highlight">Cilantro's</span> Restaurant family to yours—thank you for your continued support!</p>
+                    
+                    <!-- Features Grid -->
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+    </section>
+
+<!-- <div class="animation-divider"></div> -->
+
+<section class="team-section" id="team">
+    <div class="mandala-overlay1"></div>
+    <div class="team-header">
+        <h1 class="team-title">Meet Our Culinary Artisans</h1>
+        <div class="title-underline"></div>
+    </div>
+
+    <div class="team-grid">
+        <!-- Team Member 1 -->
+        <div class="team-card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <div class="member-image">
+                        <img src="ritesh.jpg" alt="Ritesh Patel" />
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="member-preview">
+                        <h2>Ritesh Patel</h2>
+                        <span>Owner/Executive Chef</span>
+                    </div>
+                </div>
+                <div class="card-back">
+                    <h3>Ritesh Patel</h3>
+                    <span class="role">Owner/Executive Chef</span>
+                    <p class="bio">Owner/Executive Chef, Ritesh Patel has been a chef for almost 10 years now. He worked for the Taj group and in few of the finest restaurants in Mumbai.</p>
+                    <div class="expertise">
+                        <span class="tag">Fine Dining</span>
+                        <span class="tag">Indian Cuisine</span>
+                        <span class="tag">Culinary Innovation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Member 2 -->
+        <div class="team-card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <div class="member-image">
+                        <img src="kapil.png" alt="Kapil Gusain" />
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="member-preview">
+                        <h2>Kapil Gusain</h2>
+                        <span>Owner/Restaurant Manager</span>
+                    </div>
+                </div>
+                <div class="card-back">
+                    <h3>Kapil Gusain</h3>
+                    <span class="role">Owner/Restaurant Manager</span>
+                    <p class="bio">Kapil Gusain grew up in India in Dehradun, Delhi and Bombay. In 2008, he completed his Hospitality and culinary Management. He worked in different top restaurants in India and Canada.</p>
+                    <div class="expertise">
+                        <span class="tag">Hospitality</span>
+                        <span class="tag">Management</span>
+                        <span class="tag">Customer Service</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="testimonial-section" id="review">
+    <div class="testimonial-header">
+        <h2>Customer Stories</h2>
+        <div class="decorative-spoons">
+            <span class="spoon-left">🥄</span>
+            <span class="spoon-right">🥄</span>
+        </div>
+    </div>
+
+    <div class="testimonial-carousel">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card">
+            <div class="card-inner">
+                <div class="quote-icon">❝</div>
+                <div class="star-rating">★★★★★</div>
+                <p class="testimonial-text">Some of the best Indian food I've had in years. Friendly staff, amazing food, good portions, and great value. Definitely going to be coming back.</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">JW</div>
+                    <div class="author-info">
+                        <h4>Justin Woodcock</h4>
+                        <span class="verified-badge">✓ Verified Visit</span>
+                    </div>
+                </div>
+                <div class="dish-tags">
+                    <span class="tag">Butter Chicken</span>
+                    <span class="tag">Samosa Sandwich</span>
+                    <span class="tag">Naan</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Repeat similar structure for other testimonials -->
+
+        <div class="testimonial-card">
+            <div class="card-inner">
+                <div class="quote-icon">❝</div>
+                <div class="star-rating">★★★★★</div>
+                <p class="testimonial-text">Among the top eateries in the area. When I first encountered it, I was caught off guard. full tastes. Great meal. Great service. I will definitely be back soon</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">MS</div>
+                    <div class="author-info">
+                        <h4>Monu Singh</h4>
+                        <span class="verified-badge">✓ Verified Visit</span>
+                    </div>
+                </div>
+                <div class="dish-tags">
+                    <span class="tag">Naan Basket</span>
+                    <span class="tag">Paneer Tikka Masala</span>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="card-inner">
+                <div class="quote-icon">❝</div>
+                <div class="star-rating">★★★★★</div>
+                <p class="testimonial-text">Among the top eateries in the area. When I first encountered it, I was caught off guard. full tastes. Great meal. Great service. I will definitely be back soon</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">MS</div>
+                    <div class="author-info">
+                        <h4>Monu Singh</h4>
+                        <span class="verified-badge">✓ Verified Visit</span>
+                    </div>
+                </div>
+                <div class="dish-tags">
+                    <span class="tag">Naan Basket</span>
+                    <span class="tag">Paneer Tikka Masala</span>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="card-inner">
+                <div class="quote-icon">❝</div>
+                <div class="star-rating">★★★★★</div>
+                <p class="testimonial-text">Among the top eateries in the area. When I first encountered it, I was caught off guard. full tastes. Great meal. Great service. I will definitely be back soon</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">MS</div>
+                    <div class="author-info">
+                        <h4>Monu Singh</h4>
+                        <span class="verified-badge">✓ Verified Visit</span>
+                    </div>
+                </div>
+                <div class="dish-tags">
+                    <span class="tag">Naan Basket</span>
+                    <span class="tag">Paneer Tikka Masala</span>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="card-inner">
+                <div class="quote-icon">❝</div>
+                <div class="star-rating">★★★★★</div>
+                <p class="testimonial-text">Among the top eateries in the area. When I first encountered it, I was caught off guard. full tastes. Great meal. Great service. I will definitely be back soon</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">MS</div>
+                    <div class="author-info">
+                        <h4>Monu Singh</h4>
+                        <span class="verified-badge">✓ Verified Visit</span>
+                    </div>
+                </div>
+                <div class="dish-tags">
+                    <span class="tag">Naan Basket</span>
+                    <span class="tag">Paneer Tikka Masala</span>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="card-inner">
+                <div class="quote-icon">❝</div>
+                <div class="star-rating">★★★★★</div>
+                <p class="testimonial-text">Among the top eateries in the area. When I first encountered it, I was caught off guard. full tastes. Great meal. Great service. I will definitely be back soon</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">MS</div>
+                    <div class="author-info">
+                        <h4>Monu Singh</h4>
+                        <span class="verified-badge">✓ Verified Visit</span>
+                    </div>
+                </div>
+                <div class="dish-tags">
+                    <span class="tag">Naan Basket</span>
+                    <span class="tag">Paneer Tikka Masala</span>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="card-inner">
+                <div class="quote-icon">❝</div>
+                <div class="star-rating">★★★★★</div>
+                <p class="testimonial-text">Among the top eateries in the area. When I first encountered it, I was caught off guard. full tastes. Great meal. Great service. I will definitely be back soon</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">MS</div>
+                    <div class="author-info">
+                        <h4>Monu Singh</h4>
+                        <span class="verified-badge">✓ Verified Visit</span>
+                    </div>
+                </div>
+                <div class="dish-tags">
+                    <span class="tag">Naan Basket</span>
+                    <span class="tag">Paneer Tikka Masala</span>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="card-inner">
+                <div class="quote-icon">❝</div>
+                <div class="star-rating">★★★★★</div>
+                <p class="testimonial-text">Among the top eateries in the area. When I first encountered it, I was caught off guard. full tastes. Great meal. Great service. I will definitely be back soon</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">MS</div>
+                    <div class="author-info">
+                        <h4>Monu Singh</h4>
+                        <span class="verified-badge">✓ Verified Visit</span>
+                    </div>
+                </div>
+                <div class="dish-tags">
+                    <span class="tag">Naan Basket</span>
+                    <span class="tag">Paneer Tikka Masala</span>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="card-inner">
+                <div class="quote-icon">❝</div>
+                <div class="star-rating">★★★★★</div>
+                <p class="testimonial-text">Among the top eateries in the area. When I first encountered it, I was caught off guard. full tastes. Great meal. Great service. I will definitely be back soon</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">MS</div>
+                    <div class="author-info">
+                        <h4>Monu Singh</h4>
+                        <span class="verified-badge">✓ Verified Visit</span>
+                    </div>
+                </div>
+                <div class="dish-tags">
+                    <span class="tag">Naan Basket</span>
+                    <span class="tag">Paneer Tikka Masala</span>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="testimonial-nav">
+        <button class="nav-btn prev">←</button>
+        
+        <button class="nav-btn next">→</button>
+    </div>
+</section>
+
+
+<section class="location-section" id="location">
+    <div class="section-header">
+        <h2 class="section-title">Our Cilantro's Locations</h2>
+        <p class="section-subtitle">Discover Our Culinary Destinations Across the City</p>
+    </div>
+    <div class="location-container">
+        <div class="location-card">
+            <div class="location-image downtown">
+                <div class="location-content">
+                    <h3>Gateway Location</h3>
+                    <div class="location-details">
+                        <div class="detail-group">
+                            <i class="material-icons" style="color: white;">location_on</i>
+                            <span>725 Gateway Rd, Winnipeg, MB R2K 2Y3</span>
+                        </div>
+                        <div class="detail-group">
+                            <i class="material-icons" style="color: white;">call</i>
+                            <span>(204)669-9157</span>
+                        </div>
+                        <div class="detail-group">
+                            <i class="material-icons" style="color: white;">access_time</i>
+                            <span>Mon-Sun: 11am-10pm</span>
+                        </div>
+                        
+                    </div>
+                    <button class="book-btn"><a href="menu.html">Menu</a></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="location-card">
+            <div class="location-image suburbs">
+                <div class="location-content">
+                    <h3>Portage Location</h3>
+                    <div class="location-details">
+                        <div class="detail-group">
+                            <i class="material-icons" style="color: white;">location_on</i>
+                            <span>1132 Portage Ave, Winnipeg, MB R3G 0S7</span>
+                        </div>
+						
+                        <div class="detail-group">
+                            <i class="material-icons" style="color: white;">call</i>
+                            <span>(204)306-6354</span>
+                        </div>
+                        <div class="detail-group">
+                            <i class="material-icons" style="color: white;">access_time</i>
+                            <span>Sun-Thu: 11am-9:30pm</span>
+							<span>Fri-Sat: 11am-10:30pm</span>
+                        </div>
+                        
+                    </div>
+                    <button class="book-btn"><a href="menu.html">Menu</a></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="location-card">
+            <div class="location-image riverside">
+                <div class="location-content">
+                    <h3>Bridgewater Location</h3>
+                    <div class="location-details">
+                        <div class="detail-group">
+                            <i class="material-icons" style="color: white;">location_on</i>
+                            <span>400 North Town Road #130, Winnipeg, MB R3Y 0Y3</span>
+                        </div>
+                        <div class="detail-group">
+                            <i class="material-icons" style="color: white;">call</i>
+                            <span>(204)306-3306</span>
+                        </div>
+                        <div class="detail-group">
+                            <i class="material-icons" style="color: white;">access_time</i>
+                            <span>Mon-Sun: 11am-9:30pm</span>
+                        </div>
+						<br>
+                        
+                    </div>
+                    <button class="book-btn"><a href="menu.html">Menu</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-logo-section">
+            <div class="footer-logo">
+                <img src="logo.png" alt="Cilantro Restaurant Logo">
+                <!-- <div class="logo-text"> -->
+                    <!-- <h3>Cilantro</h3> -->
+                    <!-- <p>Authentic Indian Cuisine</p> -->
+                <!-- </div> -->
+            </div>
+            <div class="social-icons">
+                <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+        <div class="footer-text-section">
+            <p>© 2023 Cilantro Restaurants. All Rights Reserved.</p>
+            <p>Crafting culinary experiences that blend traditional Indian flavors with modern innovation.</p>
+        </div>
+    </div>
+</footer>
+
+
+<!-- HTML Structure -->
+<!-- Back to Top Button -->
+<button id="backToTopBtn" class="back-to-top-btn" aria-label="Scroll to top" title="Go to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<script src="home.js"></script> 
+	</div>
+
+</body>
+</html>

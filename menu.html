@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Spice - Fine Indian Dining</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+    <header>
+        <h1>Royal Spice - Fine Indian Dining</h1>
+    </header>
+
+    <div class="cart-icon" onclick="toggleCart()">
+        🛒 <span id="cart-count">0</span>
+    </div>
+
+    <div class="category-nav" id="category-nav">
+        <!-- Category buttons will be dynamically added -->
+    </div>
+
+    <div class="menu-container" id="menu-container">
+        <!-- Menu items will be dynamically added -->
+    </div>
+
+    <div class="modal-overlay" id="modal-overlay"></div>
+<div class="cart-modal" id="cart-modal">
+    <h2>Your Cart</h2>
+    <div id="cart-items"></div>
+    <div class="cart-footer">
+        <div class="cart-total">Total: ₹<span id="cart-total">0.00</span></div>
+        <div class="cart-buttons">
+            <button class="checkout-btn" onclick="checkout()">Checkout</button>
+            <button class="close-btn" onclick="toggleCart()">Close</button>
+        </div>
+    </div>
+</div>
+
+
+
+    <script>
+        // Menu data with categories (Initially empty)
+const menuData = {};
+
+// State variables
+let cart = [];
+let currentCategory = null;
+ // To hold categorized menu data
+
+        // Fetch menu data dynamically from the backend
+        async function fetchMenuData() {
+            try {
+                const response = await fetch('/api/server'); // Updated URL
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                
+                // Categorize menu data
+                const categorizedMenu = {};
+                data.forEach(item => {
+                    const category = item.Category || item.category || 'Uncategorized';
+                    
+                    if (!categorizedMenu[category]) {
+                        categorizedMenu[category] = [];
+                    }
+                    
+                    categorizedMenu[category].push({
+                        id: item.id || Math.random(), // Ensure unique ID
+                        name: item.name || 'Unnamed Item',
+                        description: item.description || '',
+                        price: parseFloat(item.price) || 0,
+                        image: item.image || 'default-image.jpg'
+                    });
+                });
+
+                // Clear and update menuData
+                Object.keys(menuData).forEach(key => delete menuData[key]);
+                Object.assign(menuData, categorizedMenu);
+
+                console.log('Processed Menu Data:', menuData);
+                initMenu();
+            } catch (error) {
+                console.error('Error fetching menu data:', error);
+            }
+        }
+
+// Initialize the menu
+function initMenu() {
+            const menuContainer = document.getElementById('menu-container');
+            menuContainer.innerHTML = ''; // Clear previous content
+
+            Object.keys(menuData).forEach(category => {
+                const categoryDiv = document.createElement('div');
+                categoryDiv.className = 'menu-category';
+
+                const categoryTitle = document.createElement('h2');
+                categoryTitle.textContent = category;
+                categoryDiv.appendChild(categoryTitle);
+
+                const itemsContainer = document.createElement('div');
+                itemsContainer.className = 'items-container';
+
+                menuData[category].forEach(item => {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = 'menu-item';
+
+                    const img = document.createElement('img');
+                    img.src = item.image;
+                    img.alt = item.name;
+
+                    const name = document.createElement('h3');
+                    name.textContent = item.name;
+
+                    const description = document.createElement('p');
+                    description.textContent = item.description;
+
+                    const price = document.createElement('span');
+                    price.textContent = `$${item.price.toFixed(2)}`;
+
+                    itemDiv.appendChild(img);
+                    itemDiv.appendChild(name);
+                    itemDiv.appendChild(description);
+                    itemDiv.appendChild(price);
+
+                    itemsContainer.appendChild(itemDiv);
+                });
+
+                categoryDiv.appendChild(itemsContainer);
+                menuContainer.appendChild(categoryDiv);
+            });
+        }
+
+
+// Render category navigation
+function renderCategoryNav() {
+    const categoryNav = document.getElementById('category-nav');
+    categoryNav.innerHTML = '';
+
+    Object.keys(menuData).forEach((category, index) => {
+        const button = document.createElement('button');
+        button.textContent = category;
+        button.className = 'category-nav-btn';
+        if (index === 0) button.classList.add('active');
+        button.onclick = () => showCategory(category);
+        categoryNav.appendChild(button);
+    });
+}
+
+// Show selected category
+function showCategory(category) {
+    const buttons = document.querySelectorAll('.category-nav-btn');
+    buttons.forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.textContent === category) btn.classList.add('active');
+    });
+
+    const menuContainer = document.getElementById('menu-container');
+    menuContainer.innerHTML = '';
+
+    const menuGrid = document.createElement('div');
+    menuGrid.className = 'menu-grid';
+
+    menuData[category].forEach(item => {
+        const menuItem = document.createElement('div');
+        menuItem.className = 'menu-item';
+        menuItem.innerHTML = `
+            <img src="${item.image}" alt="${item.name}">
+            <div class="item-details">
+                <h3>${item.name}</h3>
+                <p>${item.description}</p>
+                <div class="price">$${item.price.toFixed(2)}</div>
+                <div class="quantity-controls">
+                    <button class="quantity-btn" onclick="changeQuantity(${item.id}, -1, 'quantity-${item.id}')">-</button>
+                    <span class="quantity-display" id="quantity-${item.id}">0</span>
+                    <button class="quantity-btn" onclick="changeQuantity(${item.id}, 1, 'quantity-${item.id}')">+</button>
+                </div>
+                <button class="add-to-cart" onclick="addToCart(${item.id})">Add to Cart</button>
+            </div>
+        `;
+        menuGrid.appendChild(menuItem);
+    });
+
+    menuContainer.appendChild(menuGrid);
+}
+
+// Change item quantity
+function changeQuantity(itemId, change, quantityDisplayId) {
+    const quantityDisplay = document.getElementById(quantityDisplayId);
+    let currentQuantity = parseInt(quantityDisplay.textContent);
+    const newQuantity = Math.max(0, currentQuantity + change);
+    quantityDisplay.textContent = newQuantity;
+}
+
+// Add item to cart
+function addToCart(itemId) {
+    const quantityDisplay = document.getElementById(`quantity-${itemId}`);
+    const quantity = parseInt(quantityDisplay.textContent);
+
+    if (quantity === 0) return;
+
+    // Find the item in the menu data
+    let item = null;
+    for (let category in menuData) {
+        const foundItem = menuData[category].find(i => i.id === itemId);
+        if (foundItem) {
+            item = { ...foundItem, quantity };
+            break;
+        }
+    }
+
+    if (item) {
+        // Check if item already in cart and create a new entry if different
+        const existingItemIndex = cart.findIndex(cartItem => 
+            cartItem.id === itemId && 
+            JSON.stringify(cartItem.customizations || {}) === JSON.stringify(item.customizations || {})
+        );
+
+        if (existingItemIndex !== -1) {
+            cart[existingItemIndex].quantity += quantity;
+        } else {
+            cart.push(item);
+        }
+
+        // Reset quantity display
+        quantityDisplay.textContent = '0';
+        updateCart();
+    }
+}
+
+// Update cart
+// Update cart rendering
+function updateCart() {
+    const cartCount = document.getElementById('cart-count');
+    const cartItems = document.getElementById('cart-items');
+    const cartTotal = document.getElementById('cart-total');
+
+    // Clear the cart items
+    cartItems.innerHTML = '';
+
+    // Calculate total and render items
+    let total = 0;
+    cart.forEach((item, index) => {
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+
+        const cartItemElement = document.createElement('div');
+        cartItemElement.className = 'cart-item';
+
+        cartItemElement.innerHTML = `
+            <div class="cart-item-name">${item.name}</div>
+            <div class="cart-item-quantity">x${item.quantity}</div>
+            <div class="cart-item-price">₹${itemTotal.toFixed(2)}</div>
+            <button class="remove-btn" onclick="removeCartItem(${index})">Remove</button>
+        `;
+
+        cartItems.appendChild(cartItemElement);
+    });
+
+    cartCount.textContent = cart.length;
+    cartTotal.textContent = total.toFixed(2);
+}
+
+
+// Remove item from cart
+function removeCartItem(index) {
+    cart.splice(index, 1);
+    updateCart();
+}
+
+// Toggle cart modal
+function toggleCart() {
+    const modal = document.getElementById('cart-modal');
+    const overlay = document.getElementById('modal-overlay');
+    modal.classList.toggle('active');
+    overlay.classList.toggle('active');
+}
+
+
+// Checkout
+function checkout() {
+    if (cart.length === 0) {
+        alert('Your cart is empty!');
+        return;
+    }
+
+    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    alert(`Thank you for your order! Total: $${total.toFixed(2)}`);
+
+    // Reset cart
+    cart = [];
+    updateCart();
+    toggleCart();
+}
+
+// Fetch menu data when the page loads
+document.addEventListener('DOMContentLoaded', fetchMenuData);
+
+    </script>
+</body>
+</html>

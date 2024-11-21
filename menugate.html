@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spice Paradise - Indian Restaurant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="menugate.css">
+    
+</head>
+<body>
+    <div class="header">
+        <h1 class="restaurant-name">Cilantro's Modern Indian Cuisine</h1>
+        <p>Authentic Indian Cuisine</p>
+    </div>
+
+    <nav class="nav-categories">
+        <ul class="category-list">
+            <li class="nav-item active" data-filter="all">All</li>
+            <li class="nav-item" data-filter="starters">Starters</li>
+            <li class="nav-item" data-filter="main-course">Main Course</li>
+            <li class="nav-item" data-filter="breads">Breads</li>
+            <li class="nav-item" data-filter="rice-biryani">Rice & Biryani</li>
+            <li class="nav-item" data-filter="desserts">Desserts</li>
+            <li class="nav-item" data-filter="beverages">Beverages</li>
+            <li class="nav-item veg-filter" data-filter="veg">
+                <span class="veg-icon"></span>Veg
+            </li>
+            <li class="nav-item non-veg-filter" data-filter="non-veg">
+                <span class="non-veg-icon"></span>Non-Veg
+            </li>
+        </ul>
+    </nav>
+    
+
+    <div class="menu-container">
+        <section class="menu-section">
+            <h2 class="section-title">Starters</h2>
+            <div class="menu-grid">
+                <div class="menu-item" data-category="starters" data-diet-type="veg">
+                    <div class="item-name">
+                        <span><i class="fas fa-circle veg-badge"></i> Paneer Tikka</span>
+                        <span class="item-price">₹250</span>
+                    </div>
+                    <p class="item-description">Marinated cottage cheese cubes grilled to perfection with bell peppers and onions.</p>
+                    <div class="spice-level">
+                        <i class="fas fa-pepper-hot"></i>
+                        <i class="fas fa-pepper-hot"></i>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="starters" data-diet-type="non-veg">
+                    <div class="item-name" >
+                        <span><i class="fas fa-circle non-veg-badge"></i> Chicken Tikka</span>
+                        <span class="item-price">₹320</span>
+                    </div>
+                    <p class="item-description">Tender chicken pieces marinated in spices and yogurt, grilled in tandoor.</p>
+                    <div class="spice-level">
+                        <i class="fas fa-pepper-hot"></i>
+                        <i class="fas fa-pepper-hot"></i>
+                        <i class="fas fa-pepper-hot"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="menu-section">
+            <h2 class="section-title">Main Course</h2>
+            <div class="menu-grid">
+                <div class="menu-item" data-category="main-course" data-diet-type="veg">
+                    <div class="item-name">
+                        <span><i class="fas fa-circle veg-badge"></i> Paneer Tikka</span>
+                        <span class="item-price">₹250</span>
+                    </div>
+                    <p class="item-description">Marinated cottage cheese cubes grilled to perfection with bell peppers and onions.</p>
+                    <div class="spice-level">
+                        <i class="fas fa-pepper-hot"></i>
+                        <i class="fas fa-pepper-hot"></i>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="main-course" data-diet-type="non-veg">
+                    <div class="item-name" >
+                        <span><i class="fas fa-circle non-veg-badge"></i> Chicken Tikka</span>
+                        <span class="item-price">₹320</span>
+                    </div>
+                    <p class="item-description">Tender chicken pieces marinated in spices and yogurt, grilled in tandoor.</p>
+                    <div class="spice-level">
+                        <i class="fas fa-pepper-hot"></i>
+                        <i class="fas fa-pepper-hot"></i>
+                        <i class="fas fa-pepper-hot"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Add more sections similarly -->
+    </div>
+
+    <script src="menugate.js"></script> 
+</body>
+</html>

@@ -1,0 +1,291 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: #f9f1e6;
+    color: #333;
+}
+
+.header {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                url('https://images.unsplash.com/photo-1585937421612-70a008356fbe?ixlib=rb-1.2.1&auto=format&fit=crop&w=1024&q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.restaurant-name {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-family: 'Palatino', serif;
+}
+
+.menu-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 20px;
+}
+
+.menu-section {
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    color: #d35400;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: #d35400;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.menu-item {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+}
+
+.item-name {
+    color: #2c3e50;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.item-price {
+    color: #d35400;
+    font-weight: bold;
+}
+
+.item-description {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.spice-level {
+    margin-top: 0.5rem;
+    color: #e74c3c;
+}
+
+.veg-badge {
+    color: green;
+    margin-right: 5px;
+}
+
+.non-veg-badge {
+    color: red;
+    margin-right: 5px;
+}
+
+/* Add these styles to your existing CSS */
+@media (max-width: 768px) {
+    .nav-categories {
+        padding: 0;
+        position: relative;
+    }
+
+    .category-list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #2c3e50;
+        z-index: 1000;
+        max-height: 70vh;
+        overflow-y: auto;
+    }
+
+    .category-list.active {
+        display: flex;
+    }
+
+    .category-list li {
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .hamburger-menu {
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        transform: translateY(-50%);
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    .hamburger-icon {
+        width: 30px;
+        height: 4px;
+        background-color: white;
+        position: relative;
+        transition: all 0.3s ease;
+    }
+
+    .hamburger-icon::before,
+    .hamburger-icon::after {
+        content: '';
+        width: 30px;
+        height: 4px;
+        background-color: white;
+        position: absolute;
+        transition: all 0.3s ease;
+    }
+
+    .hamburger-icon::before {
+        top: -10px;
+    }
+
+    .hamburger-icon::after {
+        top: 10px;
+    }
+
+    .hamburger-menu.active .hamburger-icon {
+        background-color: transparent;
+    }
+
+    .hamburger-menu.active .hamburger-icon::before {
+        top: 0;
+        transform: rotate(45deg);
+    }
+
+    .hamburger-menu.active .hamburger-icon::after {
+        top: 0;
+        transform: rotate(-45deg);
+    }
+}
+
+.nav-categories {
+    background: #2c3e50;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.category-list {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    list-style: none;
+    overflow-x: auto;
+    padding: 0 1rem;
+}
+
+.category-list li {
+    color: white;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: background 0.3s ease;
+}
+
+.category-list li:hover {
+    background: #d35400;
+}
+
+.category-list li.active {
+    background: #d35400;
+}
+
+.filter-buttons {
+    text-align: center;
+    margin: 20px 0;
+    padding: 10px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background: #f0f0f0;
+}
+
+.filter-btn.active {
+    background: #d35400;
+    color: white;
+}
+
+.filter-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.filter-btn.veg {
+    border: 2px solid #2ecc71;
+}
+
+.filter-btn.non-veg {
+    border: 2px solid #e74c3c;
+}
+
+.menu-item {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.menu-item.hide {
+    display: none;
+    opacity: 0;
+}
+
+.veg-icon, .non-veg-icon {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    border: 2px solid;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.veg-icon {
+    border-color: #2ecc71;
+    background: #2ecc71;
+}
+
+.non-veg-icon {
+    border-color: #e74c3c;
+    background: #e74c3c;
+}

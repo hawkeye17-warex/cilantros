@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu Book</title>
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+  <div class="book">
+    <div class="page page-left" id="pageLeft">
+        <div class="cover-page">
+            <img src="gateway.jpg" alt="Restaurant Interior" class="cover-image">
+            <h1 class="restaurant-name">Cilantro's Gateway</h1>
+        </div>
+    </div>
+    <div class="page page-right" id="pageRight"></div>
+    
+    <button class="nav-button nav-button-prev" onclick="previousPage()" id="prevButton">←</button>
+    <button class="nav-button nav-button-next" onclick="nextPage()" id="nextButton">→</button>
+    
+    <div class="page-numbers" id="pageNumbers">Page 1 of 3</div>
+
+    <!-- Menu Content -->
+    <div class="page-content" id="appetizers">
+        <h2>Appetizers</h2>
+        <div class="menu-item">
+            <div class="menu-item-header">
+                <span class="menu-item-name">Bruschetta</span>
+                <span class="menu-item-price">$8</span>
+            </div>
+            <p class="menu-item-description">Grilled bread rubbed with garlic, topped with tomatoes and herbs</p>
+        </div>
+        <div class="menu-item">
+            <div class="menu-item-header">
+                <span class="menu-item-name">Calamari</span>
+                <span class="menu-item-price">$12</span>
+            </div>
+            <p class="menu-item-description">Crispy fried squid served with marinara sauce</p>
+        </div>
+        <div class="menu-item">
+            <div class="menu-item-header">
+                <span class="menu-item-name">Caprese Salad</span>
+                <span class="menu-item-price">$10</span>
+            </div>
+            <p class="menu-item-description">Fresh mozzarella, tomatoes, and basil with balsamic glaze</p>
+        </div>
+        <div class="menu-item">
+            <div class="menu-item-header">
+                <span class="menu-item-name">Spring Rolls</span>
+                <span class="menu-item-price">$9</span>
+            </div>
+            <p class="menu-item-description">Fresh vegetables wrapped in rice paper with sweet chili sauce</p>
+        </div>
+        <div class="menu-item">
+            <div class="menu-item-header">
+                <span class="menu-item-name">Stuffed Mushrooms</span>
+                <span class="menu-item-price">$11</span>
+            </div>
+            <p class="menu-item-description">Button mushrooms filled with herbs and cheese</p>
+        </div>
+    </div>
+
+    <div class="page-content" id="mains">
+        <h2>Main Courses</h2>
+        <div class="menu-item">
+            <div class="menu-item-header">
+                <span class="menu-item-name">Grilled Salmon</span>
+                <span class="menu-item-price">$28</span>
+            </div>
+            <p class="menu-item-description">Atlantic salmon with lemon butter sauce and seasonal vegetables</p>
+        </div>
+        <div class="menu-item">
+            <div class="menu-item-header">
+                <span class="menu-item-name">Beef Tenderloin</span>
+                <span class="menu-item-price">$34</span>
+            </div>
+            <p class="menu-item-description">8oz filet with red wine reduction and mashed potatoes</p>
+        </div>
+        <div class="menu-item">
+            <div class="menu-item-header">
+                <span class="menu-item-name">Mushroom Risotto</span>
+                <span class="menu-item-price">$22</span>
+            </div>
+            <p class="menu-item-description">Creamy arborio rice with wild mushrooms and parmesan</p>
+        </div>
+        <div class="menu-item">
+            <div class="menu-item-header">
+                <span class="menu-item-name">Chicken Marsala</span>
+                <span class="menu-item-price">$26</span>
+            </div>
+            <p class="menu-item-description">Pan-seared chicken breast with marsala wine sauce</p>
+        </div>
+    </div>
+
+    <div class="page-content" id="desserts">
+        <h2>Desserts</h2>
+        <div class="menu-item">
+            <div class="menu-item-header">
+                <span class="menu-item-name">Tiramisu</span>
+                <span class="menu-item-price">$9</span>
+            </div>
+            <p class="menu-item-description">Classic Italian coffee-flavored dessert</p>
+        </div>
+        <div class="menu-item">
+            <div class="menu-item-header">
+                <span class="menu-item-name">Crème Brûlée</span>
+                <span class="menu-item-price">$8</span>
+            </div>
+            <p class="menu-item-description">Rich custard with caramelized sugar top</p>
+        </div>
+        <div class="menu-item">
+            <div class="menu-item-header">
+                <span class="menu-item-name">Chocolate Fondant</span>
+                <span class="menu-item-price">$10</span>
+            </div>
+            <p class="menu-item-description">Warm chocolate cake with molten center</p>
+        </div>
+    </div>
+</div>
+
+    <script src="menu.js"></script> 
+</body>
+</html>

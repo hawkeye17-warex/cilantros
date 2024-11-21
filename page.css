@@ -1,0 +1,166 @@
+        /* Previous styles remain the same */
+        body {
+          margin: 0;
+          min-height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: rgb(255, 251, 235);
+          font-family: 'Arial', sans-serif;
+      }
+
+      .book {
+          position: relative;
+          width: 100%;
+          max-width: 1000px;
+          min-height: 600px;
+          margin: 20px;
+          display: flex;
+          background: white;
+          box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      }
+
+      .page {
+          width: 50%;
+          padding: 32px;
+          min-height: 600px;
+          box-sizing: border-box;
+      }
+
+      .page-left {
+          border-right: 1px solid #e5e5e5;
+          background-image: linear-gradient(to right, #f8f8f8 0%, white 8%);
+          box-shadow: inset -7px 0 30px -7px rgba(0,0,0,0.1);
+      }
+
+      .page-right {
+          background-image: linear-gradient(to left, #f8f8f8 0%, white 8%);
+          box-shadow: inset 7px 0 30px -7px rgba(0,0,0,0.1);
+      }
+
+      .page-content {
+          display: none;
+      }
+
+      .page-content.active {
+          display: block;
+      }
+
+      /* New style for the cover page */
+      .cover-page {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+          text-align: center;
+      }
+
+      .cover-image {
+          width: 80%;
+          height: 300px;
+          margin-bottom: 2rem;
+          object-fit: cover;
+          border-radius: 8px;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+
+      .restaurant-name {
+          font-family: 'Georgia', serif;
+          font-size: 2.5rem;
+          margin-bottom: 1rem;
+          color: #1f2937;
+      }
+
+      h2 {
+          font-family: 'Georgia', serif;
+          font-size: 2rem;
+          text-align: center;
+          margin-bottom: 2rem;
+          padding-bottom: 1rem;
+          border-bottom: 1px solid #e5e5e5;
+      }
+
+      .menu-item {
+          margin-bottom: 1.5rem;
+          padding-bottom: 1rem;
+          border-bottom: 1px solid #e5e5e5;
+      }
+
+      .menu-item-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: baseline;
+          margin-bottom: 0.5rem;
+      }
+
+      .menu-item-name {
+          font-size: 1.25rem;
+          font-weight: 500;
+      }
+
+      .menu-item-price {
+          font-size: 1.125rem;
+          color: #4b5563;
+      }
+
+      .menu-item-description {
+          color: #6b7280;
+          line-height: 1.5;
+      }
+
+      .nav-button {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background-color: rgb(254, 243, 199);
+          border: none;
+          color: #1f2937;
+          padding: 8px 16px;
+          cursor: pointer;
+          font-weight: bold;
+          transition: background-color 0.2s;
+      }
+
+      .nav-button:hover {
+          background-color: rgb(253, 230, 138);
+      }
+
+      .nav-button:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+      }
+
+      .nav-button-prev {
+          left: 0;
+          transform: translateX(-48px);
+          border-radius: 4px 0 0 4px;
+      }
+
+      .nav-button-next {
+          right: 0;
+          transform: translateX(48px);
+          border-radius: 0 4px 4px 0;
+      }
+
+      .page-numbers {
+          position: absolute;
+          bottom: 16px;
+          left: 50%;
+          transform: translateX(-50%);
+          color: #6b7280;
+      }
+      .continued-title {
+        font-family: 'Georgia', serif;
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+    .continued-text {
+        font-style: italic;
+        color: #666;
+        font-size: 0.9rem;
+    }

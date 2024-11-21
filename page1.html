@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Restaurant Menu Book</title>
+    <link rel="stylesheet" href="menuport.css">
+</head>
+<body>
+    <div id="loadingIndicator" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000;">
+        Loading...
+    </div>
+    <div class="book">
+        <div id="pageLeft" class="page page-left"></div>
+        <div id="pageRight" class="page page-right"></div>
+        
+        <button id="prevButton" class="nav-button nav-button-prev" onclick="previousPage()" aria-label="Previous page">←</button>
+<button id="nextButton" class="nav-button nav-button-next" onclick="nextPage()" aria-label="Next page">→</button>
+        <div id="pageNumbers" class="page-numbers">Page 1 of 3</div>
+
+        <!-- Menu Content -->
+        <div id="appetizers" style="display: none;">
+            <h2>Appetizers</h2>
+            <div class="menu-item">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Haryali Chicken Tikka</span>
+                    <span class="menu-item-price">$14.99</span>
+                </div>
+                <div class="menu-item-description">Chicken marinated in cilantro dressing, cooked in clayoven.</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Saffron Malai Chicken Tikka</span>
+                    <span class="menu-item-price">$14.99</span>
+                </div>
+                <div class="menu-item-description">Chicken marinated in cream dressing, cooked in clayoven.</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Tandoori Chicken Tikka</span>
+                    <span class="menu-item-price">$14.99</span>
+                </div>
+                <div class="menu-item-description">Boneless chicken marinated with Kashmiri chilies, yogurt and spices, cooked in clayoven.</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Desi Chicken Wings (8Pcs)</span>
+                    <span class="menu-item-price">$12.99</span>
+                </div>
+                <div class="menu-item-description">Butter Sauce/Creamy Tandoori /Sweet Spicy Tamarind/Desi Style</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Samosa Platter</span>
+                    <span class="menu-item-price">$9.99</span>
+                </div>
+                <div class="menu-item-description">Samosas served with chickpeas, cilantro and tamarind sauce.</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Chicken Samosa Platter</span>
+                    <span class="menu-item-price">$11.99</span>
+                </div>
+                <div class="menu-item-description">Two Samosas topped with chicken and served with chickpeas, cilantro pesto and tangy tamarind sauce. </div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Aloo Tikki Platter</span>
+                    <span class="menu-item-price">$9.99</span>
+                </div>
+                <div class="menu-item-description">Butter Sauce/Creamy Tandoori /Sweet Spicy Tamarind/Desi Style</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Desi Chicken Wings (8Pcs)</span>
+                    <span class="menu-item-price">$12.99</span>
+                </div>
+                <div class="menu-item-description">Butter Sauce/Creamy Tandoori /Sweet Spicy Tamarind/Desi Style</div>
+            </div>
+        </div>
+
+        <div id="mains" style="display: none;">
+            <h2>Main Courses</h2>
+            <div class="menu-item">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Grilled Salmon</span>
+                    <span class="menu-item-price">$28</span>
+                </div>
+                <div class="menu-item-description">Atlantic salmon with lemon butter sauce and seasonal vegetables</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Beef Tenderloin</span>
+                    <span class="menu-item-price">$34</span>
+                </div>
+                <div class="menu-item-description">8oz filet with red wine reduction and mashed potatoes</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Mushroom Risotto</span>
+                    <span class="menu-item-price">$22</span>
+                </div>
+                <div class="menu-item-description">Creamy arborio rice with wild mushrooms and parmesan</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Chicken Marsala</span>
+                    <span class="menu-item-price">$26</span>
+                </div>
+                <div class="menu-item-description">Pan-seared chicken breast with marsala wine sauce</div>
+            </div>
+        </div>
+
+        <div id="desserts" style="display: none;">
+            <h2>Desserts</h2>
+            <div class="menu-item">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Tiramisu</span>
+                    <span class="menu-item-price">$9</span>
+                </div>
+                <div class="menu-item-description">Classic Italian coffee-flavored dessert</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Crème Brûlée</span>
+                    <span class="menu-item-price">$8</span>
+                </div>
+                <div class="menu-item-description">Rich custard with caramelized sugar top</div>
+            </div>
+
+            <div class="menu-item">
+                <div class="menu-item-header">
+                    <span class="menu-item-name">Chocolate Fondant</span>
+                    <span class="menu-item-price">$10</span>
+                </div>
+                <div class="menu-item-description">Warm chocolate cake with molten center</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="menuport.js"></script> 
+</body>
+</html>
