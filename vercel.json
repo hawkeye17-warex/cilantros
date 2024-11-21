@@ -1,0 +1,12 @@
+{
+    "rewrites": [
+      { "source": "/menu", "destination": "/menu.html" }
+    ],
+    "functions": {
+      "api/server.js": {
+        "memory": 128,
+        "maxDuration": 10
+      }
+    }
+  }
+  
